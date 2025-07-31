@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Auth System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="auth-container">
+      <!-- Tab Navigation -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="register">Register</button>
+      </div>
+      
+      <!-- Login Form -->
+      <div id="login" class="tab-content active">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required>
+            <div class="error-message" id="login-email-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required>
+            <div class="error-message" id="login-password-error"></div>
+          </div>
+          
+          <button type="submit" class="btn">
+            <span class="btn-text">Login</span>
+            <span class="loading-spinner"></span>
+          </button>
+          
+          <div class="form-footer">
+            <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Register Form -->
+      <div id="register" class="tab-content">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="register-username">Username</label>
+            <input type="text" id="register-username" required>
+            <div class="error-message" id="register-username-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="register-email">Email</label>
+            <input type="email" id="register-email" required>
+            <div class="error-message" id="register-email-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" required>
+            <div class="error-message" id="register-password-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="register-confirm-password">Confirm Password</label>
+            <input type="password" id="register-confirm-password" required>
+            <div class="error-message" id="register-confirm-password-error"></div>
+          </div>
+          
+          <button type="submit" class="btn">
+            <span class="btn-text">Register</span>
+            <span class="loading-spinner"></span>
+          </button>
+        </form>
+      </div>
+      
+      <!-- Forgot Password Modal -->
+      <div id="forgotPasswordModal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Reset Password</h2>
+          <form id="forgotPasswordForm">
+            <div class="form-group">
+              <label for="reset-email">Email</label>
+              <input type="email" id="reset-email" required>
+              <div class="error-message" id="reset-email-error"></div>
+            </div>
+            <button type="submit" class="btn">
+              <span class="btn-text">Send Reset Link</span>
+              <span class="loading-spinner"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Reset Password Form (hidden by default) -->
+      <div id="resetPasswordContainer" class="hidden">
+        <h2>Set New Password</h2>
+        <form id="resetPasswordForm">
+          <input type="hidden" id="reset-token">
+          <div class="form-group">
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password" required>
+            <div class="error-message" id="new-password-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="confirm-new-password">Confirm New Password</label>
+            <input type="password" id="confirm-new-password" required>
+            <div class="error-message" id="confirm-new-password-error"></div>
+          </div>
+          <button type="submit" class="btn">
+            <span class="btn-text">Update Password</span>
+            <span class="loading-spinner"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+    
+    <!-- Dashboard (shown after login) -->
+    <div id="dashboard" class="hidden">
+      <h1>Welcome, <span id="dashboard-username"></span>!</h1>
+      <p>This is your portfolio dashboard.</p>
+      <button id="logoutBtn" class="btn">Logout</button>
+    </div>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
