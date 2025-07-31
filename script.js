@@ -1,6 +1,7 @@
 import { setupAuth } from './auth/auth.js';
 import { setupUI } from './auth/ui.js';
 import { setupValidation } from './auth/validation.js';
+import { auth } from '/auth.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize all modules
