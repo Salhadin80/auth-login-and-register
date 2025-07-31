@@ -143,26 +143,14 @@ input:focus {
   background-color: var(--secondary-color);
 }
 
-.btn .loading-spinner {
-  display: none;
+.loading-spinner {
   width: 20px;
   height: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(255,255,255,0.3);
   border-radius: 50%;
   border-top-color: white;
   animation: spin 1s ease-in-out infinite;
-  margin-left: 8px;
 }
-
-.btn.loading .btn-text {
-  visibility: hidden;
-}
-
-.btn.loading .loading-spinner {
-  display: block;
-  position: absolute;
-}
-
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
